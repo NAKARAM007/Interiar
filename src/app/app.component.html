@@ -1,7 +1,38 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+  <div> 
+    <mat-toolbar color="" class="fixed-header">
+      <div fxShow="true" fxHide.gt-sm="true">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
   
-</div>
+      <a mat-button class="companyName" routerLink="/">
+        <span>Interiar Desiner</span>
+      </a>
+      <span class="example-spacer"></span>
+      <div fxShow="true" fxHide.lt-md="true">
+        <a mat-button routerLink="/home">Home</a>
+        <a mat-button routerLink="/about-us">Service</a>
+        <a mat-button routerLink="/about-us">Gallery</a>
+        <a mat-button routerLink="/about-us">About us</a>
+        <a mat-button routerLink="/contact">Contact us</a>
+      </div>
+    </mat-toolbar>
+    <mat-sidenav-container fxFlexFill class="example-container">
+      <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
+        <div fxLayout="column">
+            <a mat-button routerLink="/home">Home</a>
+            <a mat-button routerLink="/about-us">Service</a>
+            <a mat-button routerLink="/about-us">Gallery</a>
+            <a mat-button routerLink="/about-us">About us</a>
+            <a mat-button routerLink="/contact">Contact us</a>
+        </div>
+      </mat-sidenav>
+      <!-- <mat-sidenav-content fxFlexFill>
+          <div class="col-lg-12">
+                <router-outlet></router-outlet>
+            </div>
+      </mat-sidenav-content> -->
+    </mat-sidenav-container>
+  </div>
+ 

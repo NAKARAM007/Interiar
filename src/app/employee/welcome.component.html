@@ -1,0 +1,26 @@
+
+  welcome works!
+  <div class="form-group">
+    <button [disabled]="loading" type="submit"class="btn btn-primary" (click)="onSubmit();">Put</button>
+
+    <button [disabled]="loading" type="submit"class="btn btn-primary" (click)="getUser();">Get</button>
+</div>
+<table>
+  <tr>
+    <td>
+     Name
+    </td>
+    <td>
+      Password
+    </td>
+  </tr>
+  <tr *ngIf="_user !=null">
+    <td >
+     {{_user.Name}}
+    </td>
+    <td>
+      {{_user.Password}}
+    </td>
+  </tr>
+</table>
+

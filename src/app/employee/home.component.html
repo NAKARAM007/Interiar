@@ -1,0 +1,69 @@
+<form [formGroup]="form" (ngSubmit)="saveEmployee()">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Create Employee home</h3>
+    </div>
+    <div class="panel-body">
+
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input id="fullName" type="text" class="form-control" formControlName="fullName" 
+        [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }">
+        <div *ngIf="submitted && f.fullName.errors" class="invalid-feedback">
+          <div *ngIf="f.fullName.errors.required">fullName Name is required</div>
+      </div>
+      </div>
+
+      <div class="form-group">
+        <label >Email</label>
+        <input id="email" type="text"  class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" >
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">email is required</div>
+          <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+      </div>
+      </div>
+
+      <div class="form-group">
+        <label >Phone Number</label>
+        <input id="phoneNumber" type="text" class="form-control" formControlName="phoneNumber" 
+        [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }">
+        <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+          <div *ngIf="f.phoneNumber.errors.required">Phone Number  is required</div>
+          
+      </div>
+      </div>
+
+      <div class="form-group">
+        <label>Contact Preference</label>
+        <div class="form-control">
+          <label class="radio-inline">
+            <input type="radio"  formControlName="contactPreference" value="email" [(ngModel)]="contactPreference"> 
+            Email 
+          </label>
+          <label class="radio-inline" style="margin-left: 10px;">
+            <input type="radio"  formControlName="contactPreference" value="phoneNumber" [(ngModel)]="contactPreference"> 
+             Phone
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Gender</label>
+        <div class="form-control">
+          <label class="radio-inline">
+            <input type="radio"  name="gender" checked [(ngModel)]="gender"  formControlName="gender"  value="Male" >
+            <span>Male</span>
+          </label>
+          <label class="radio-inline" style="margin-left: 10px;">
+            <input type="radio" name="gender"  formControlName="gender"  value="Female" >
+            <span>Female</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-footer">
+      <button class="btn btn-primary" type="submit" [disabled]="!form.valid" >Save</button>
+    </div>
+  </div>
+</form>

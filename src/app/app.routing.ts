@@ -14,11 +14,11 @@ import { RegisterComponent } from './register';
 import { AuthGuard } from './_guards/auth.guard';
 
 const appRoutes: Routes = [
-    //{ path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  //  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
    // { path: '', component: LoginComponent },
 
 
-  //   {path:'home',component:HomeComponent},
+     {path:'home',component:HomeComponent},
   //   {path:'employees',component:EmployeeComponent
   //   ,
   //     children: [

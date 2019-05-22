@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
     <app-header></app-header>
 
     <!-- routes will be rendered here -->
-   <!-- <router-outlet></router-outlet> -->
+     <router-outlet></router-outlet>
 
     <!-- footer -->
      <app-footer></app-footer>

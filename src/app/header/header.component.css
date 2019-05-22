@@ -1,0 +1,19 @@
+
+mat-icon:hover{
+    
+    background-color: #00BCD4 !important;
+    color: #FFF !important;
+    }
+
+.mat-drawer {
+        width: 50% !important;
+    }
+.mat-container a{
+   
+    text-align-last: left
+}
+.mat-icons-close{
+   
+    text-align-last: right !important;
+}
+   

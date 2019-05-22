@@ -8,6 +8,7 @@ import { MatCardModule, MatButtonModule, MatMenuModule,MatIconModule ,MatListMod
    MatToolbarModule, MatCheckboxModule} from '@angular/material';
  import { FlexLayoutModule } from '@angular/flex-layout';
  import { MDBBootstrapModule } from 'angular-bootstrap-md';
+ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
  // import {PolymerElement, html} from '@polymer/polymer';
 // import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // import { __decorate } from "tslib";
@@ -74,6 +75,7 @@ import { JwtInterceptor, ErrorInterceptor,fakeBackendProvider } from './_helpers
   SlideshowModule,
   MDBBootstrapModule,
   AngularFontAwesomeModule,
+  NgbModule,
   MDBBootstrapModule.forRoot()
   ],
  // y schemas: [ NO_ERRORS_SCHEMA ],

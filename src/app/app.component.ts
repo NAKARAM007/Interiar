@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
    <!-- <router-outlet></router-outlet> -->
 
     <!-- footer -->
-    <!-- <app-footer></app-footer> -->
+     <app-footer></app-footer>
   `,
   styleUrls: ['./app.component.css']
 })

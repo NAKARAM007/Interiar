@@ -1,6 +1,7 @@
 import { Component, ViewChild} from '@angular/core';
 import { SwiperComponent, SwiperDirective, SwiperConfigInterface, SwiperScrollbarInterface,
    SwiperPaginationInterface } from 'ngx-swiper-wrapper';
+import { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } from 'constants';
 // import { AuthenticationService, UserService } from '../_services';
 
 
@@ -11,15 +12,19 @@ import { SwiperComponent, SwiperDirective, SwiperConfigInterface, SwiperScrollba
 })
 export class HomeComponent {
   public show:boolean = true;
-
+  
+  public _img : string = '<mat-card><img src="assets/img/download1.jpg" ></img></mat-card>';
   public slides = [
-    'First slide',
-    'Second slide',
-    'Third slide',
-    'Fourth slide',
-    'Fifth slide',
-    'Sixth slide'
+    // 'First slide',
+    // 'Second slide',
+    // 'Third slide',
+    //  'Fourth slide',
+    //  'Fifth slide',
+    //  'Sixth slide'
+    // <mat-card><img src="assets/img/download1.jpg" ></img></mat-card>
+    
   ];
+  
 
   public type: string = 'component';
 
@@ -106,6 +111,6 @@ export class HomeComponent {
   }
 
   public onIndexChange(index: number) {
-    console.log('Swiper index: ', index);
+    // console.log('Swiper index: ', index);
   }
 }

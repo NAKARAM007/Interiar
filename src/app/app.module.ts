@@ -14,6 +14,10 @@ import { MatCardModule, MatButtonModule, MatMenuModule,MatIconModule ,MatListMod
 // import { __decorate } from "tslib";
 // import { __metadata } from "tsl”;
 import {SlideshowModule} from 'ng-simple-slideshow';
+import { SwiperModule, SwiperConfigInterface,SWIPER_CONFIG } from 'ngx-swiper-wrapper';
+//import { SwiperModule } from 'ngx-swiper-wrapper';
+//import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
+//import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 // import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
 
 // import { MDBSpinningPreloader } from 'ng-uikit-pro-standard';
@@ -28,6 +32,7 @@ import { routing} from './app.routing';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { SwipeComponent } from './swiper/swiper.component';
 
 import { AboutItemComponent } from './about/about-item/about-item.component';
 import { EmployeeComponent } from './employee/employee.component';
@@ -41,6 +46,15 @@ import { AlertComponent } from './_directives';
 import { AlertService, AuthenticationService, UserService } from './_services';
 import { JwtInterceptor, ErrorInterceptor,fakeBackendProvider } from './_helpers';
 
+
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  observer: true,
+  direction: 'horizontal',
+  threshold: 50,
+  spaceBetween: 5,
+  slidesPerView: 1,
+  centeredSlides: true
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +69,7 @@ import { JwtInterceptor, ErrorInterceptor,fakeBackendProvider } from './_helpers
     RegisterComponent,
     HeaderComponent,
     FooterComponent,
+    SwipeComponent
   ],
   imports: [
   BrowserModule,routing,
@@ -76,6 +91,9 @@ import { JwtInterceptor, ErrorInterceptor,fakeBackendProvider } from './_helpers
   MDBBootstrapModule,
   AngularFontAwesomeModule,
   NgbModule,
+  SwiperModule,
+  BrowserModule,
+  FlexLayoutModule,
   MDBBootstrapModule.forRoot()
   ],
  // y schemas: [ NO_ERRORS_SCHEMA ],
@@ -83,7 +101,10 @@ import { JwtInterceptor, ErrorInterceptor,fakeBackendProvider } from './_helpers
     AlertService,
     AuthenticationService,
     UserService,
-    
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
+    },
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 

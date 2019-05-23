@@ -18,7 +18,7 @@ const appRoutes: Routes = [
    // { path: '', component: LoginComponent },
 
 
-     {path:'home',component:HomeComponent},
+     {path : 'home', component: HomeComponent},
   //   {path:'employees',component:EmployeeComponent
   //   ,
   //     children: [

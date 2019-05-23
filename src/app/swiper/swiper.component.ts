@@ -1,15 +1,15 @@
-import { Component, ViewChild} from '@angular/core';
-import { SwiperComponent, SwiperDirective, SwiperConfigInterface, SwiperScrollbarInterface,
-   SwiperPaginationInterface } from 'ngx-swiper-wrapper';
-// import { AuthenticationService, UserService } from '../_services';
+import { Component, ViewChild } from '@angular/core';
 
+import { SwiperComponent, SwiperDirective, SwiperConfigInterface,
+  SwiperScrollbarInterface, SwiperPaginationInterface } from 'ngx-swiper-wrapper';
 
 @Component({
-  selector: 'app-home',
-   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-swiper',
+  moduleId: 'src/app/swiper.component',
+ templateUrl: './swiper.component.html',
+  styleUrls: ['./swiper.component.css']
 })
-export class HomeComponent {
+export class SwipeComponent {
   public show:boolean = true;
 
   public slides = [

@@ -66,7 +66,7 @@
           </div>
       
           <div fxShow="true" fxHide.gt-sm="true">
-            <a href="#" (click)="sidenav.toggle()">
+            <a (click)="sidenav.toggle()">
               <mat-icon class="white-icon">menu</mat-icon>
             </a>
           </div>
@@ -75,8 +75,8 @@
         <mat-sidenav-container fxFlexFill class="mat-container">
           <mat-sidenav #sidenav fxLayout="column" >
             <div fxLayout="column">
-              <a (click)="sidenav.toggle()" href="#" mat-button class="mat-icons-close">
-                <mat-icon >close</mat-icon >
+              <a  class="mat-icons-close">
+                <mat-icon (click)="sidenav.toggle()">close</mat-icon >
               </a>
               <!-- <a href="#" mat-button>Menu Item 1</a>
               <a href="#" mat-button>Menu Item 2</a>

@@ -87,6 +87,6 @@
     color: #fff;
     background-color: #aaa;
   }
-  swiper-slide ng-star-inserted swiper-slide-active {
+  .swiper-slide .ng-star-inserted .swiper-slide-active {
     width: 300px !important;
   }

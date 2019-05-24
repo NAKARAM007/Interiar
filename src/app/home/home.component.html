@@ -31,7 +31,10 @@
         <swiper *ngIf="type == 'component' && show" class="swiper-container" [config]="config" (indexChange)="onIndexChange($event)" fxFlex="auto">
           <div *ngFor="let slide of slides" class="swiper-slide">
             <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
-              {{slide}}
+              
+                    <img [src]="slide.imgsrc"/>
+              
+           
             </div>
           </div>
         </swiper>
@@ -40,7 +43,8 @@
           <div class="swiper-wrapper">
             <div *ngFor="let slide of slides" class="swiper-slide">
               <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
-                {{slide}}
+                <!-- {{slide}} -->
+                <img [src]="slide.imgsrc" />
               </div>
             </div>
           </div>

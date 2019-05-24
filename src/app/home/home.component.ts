@@ -1,31 +1,51 @@
-import { Component, ViewChild} from '@angular/core';
-import { SwiperComponent, SwiperDirective, SwiperConfigInterface, SwiperScrollbarInterface,
-   SwiperPaginationInterface } from 'ngx-swiper-wrapper';
-import { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } from 'constants';
+import { Component, ViewChild } from '@angular/core';
+import {
+  SwiperComponent, SwiperDirective, SwiperConfigInterface, SwiperScrollbarInterface,
+  SwiperPaginationInterface
+} from 'ngx-swiper-wrapper';
+import { IImage } from 'ng-simple-slideshow';
+
+// import { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } from 'constants';
 // import { AuthenticationService, UserService } from '../_services';
 
 
 @Component({
   selector: 'app-home',
-   templateUrl: './home.component.html',
+  templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  public show:boolean = true;
-  
-  public _img : string = '<mat-card><img src="assets/img/download1.jpg" ></img></mat-card>';
+  public show: boolean = true;
+  element: HTMLImageElement;
   public slides = [
-    // 'First slide',
-    // 'Second slide',
-    // 'Third slide',
-    //  'Fourth slide',
-    //  'Fifth slide',
-    //  'Sixth slide'
-    // <mat-card><img src="assets/img/download1.jpg" ></img></mat-card>
-    
+    {
+      imgsrc: 'assets/img/download1.jpg',
+    },
+    {
+      imgsrc: 'assets/img/download2.jpg',
+    },
+    {
+      imgsrc: 'assets/img/download3.jpg',
+    },
+    {
+      imgsrc: 'assets/img/download4.jpg',
+    },
+    {
+      imgsrc: 'assets/img/download5.jpg',
+    },
+    {
+      imgsrc: 'assets/img/download6.jpg',
+    },
+    {
+      imgsrc: 'assets/img/download7.jpg',
+    },
+    {
+      imgsrc: 'assets/img/download8.jpg',
+    },
+    {
+      imgsrc: 'assets/img/download9.jpg',
+    }
   ];
-  
-
   public type: string = 'component';
 
   public disabled: boolean = false;
@@ -55,7 +75,7 @@ export class HomeComponent {
   @ViewChild(SwiperComponent) componentRef: SwiperComponent;
   @ViewChild(SwiperDirective) directiveRef: SwiperDirective;
 
-  constructor() {}
+  constructor() { }
 
   public toggleType() {
     this.type = (this.type === 'component') ? 'directive' : 'component';

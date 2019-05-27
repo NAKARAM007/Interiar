@@ -1,14 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { NgModule,NO_ERRORS_SCHEMA  } from '@angular/core';
-import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { NgModule, NO_ERRORS_SCHEMA  } from '@angular/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatCardModule, MatButtonModule, MatMenuModule,MatIconModule ,MatListModule,MatSidenavModule,
    MatToolbarModule, MatCheckboxModule} from '@angular/material';
  import { FlexLayoutModule } from '@angular/flex-layout';
  import { MDBBootstrapModule } from 'angular-bootstrap-md';
  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+ 
  // import {PolymerElement, html} from '@polymer/polymer';
 // import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // import { __decorate } from "tslib";

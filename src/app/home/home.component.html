@@ -1,12 +1,14 @@
-<div class="box-container" fxLayout="column" [ngStyle.lt-sm]="'min-height: 254px;'">
-  <!-- <div class="app-title">simple example app for the ngx-swiper-wrapper</div>
+<div class="jumbotron">
+  <div class="container">
+    <div class="box-container" fxLayout="column" [ngStyle.lt-sm]="'min-height: 254px;'">
+      <!-- <div class="app-title">simple example app for the ngx-swiper-wrapper</div>
 
   <div class="info-container">
     You can change the basic settings of the Swiper area by clicking the buttons on the controls pane.
   </div> -->
 
-  <div class="horizontal-container" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="stretch" fxFlex="auto">
-    <!-- <div class="vertical-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="50%">
+      <div class="horizontal-container" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="stretch" fxFlex="auto">
+        <!-- <div class="vertical-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="50%">
       <div class="box-title">Controls</div>
 
       <div class="action-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto">
@@ -24,38 +26,77 @@
       </div>
     </div> -->
 
-    <div class="vertical-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="50%">
-      <!-- <div class="box-title">Swiper</div> -->
+        <div class="vertical-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="50%">
+          <!-- <div class="box-title">Swiper</div> -->
 
-      <div class="content-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto">
-        <swiper *ngIf="type == 'component' && show" class="swiper-container" [config]="config" (indexChange)="onIndexChange($event)" fxFlex="auto">
-          <div *ngFor="let slide of slides" class="swiper-slide">
-            <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
-              
-                    <img [src]="slide.imgsrc"/>
-              
-           
-            </div>
-          </div>
-        </swiper>
+          <div class="content-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto">
+            <swiper *ngIf="type == 'component' && show" class="swiper-container" [config]="config"
+              (indexChange)="onIndexChange($event)" fxFlex="auto">
+              <div *ngFor="let slide of slides" class="swiper-slide">
+                <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
 
-        <div *ngIf="type == 'directive' && show" class="swiper-container" [swiper]="config" (indexChange)="onIndexChange($event)">
-          <div class="swiper-wrapper">
-            <div *ngFor="let slide of slides" class="swiper-slide">
-              <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
-                <!-- {{slide}} -->
-                <img [src]="slide.imgsrc" />
+                  <img [src]="slide.imgsrc" />
+
+
+                </div>
               </div>
+            </swiper>
+
+            <div *ngIf="type == 'directive' && show" class="swiper-container" [swiper]="config"
+              (indexChange)="onIndexChange($event)">
+              <div class="swiper-wrapper">
+                <div *ngFor="let slide of slides" class="swiper-slide">
+                  <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+                    <!-- {{slide}} -->
+                    <img [src]="slide.imgsrc" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-scrollbar" [hidden]="config.scrollbar === false"></div>
+              <div class="swiper-pagination" [hidden]="config.pagination === false"></div>
+
+              <div class="swiper-button-prev" [hidden]="config.navigation === false"></div>
+              <div class="swiper-button-next" [hidden]="config.navigation === false"></div>
             </div>
           </div>
-
-          <div class="swiper-scrollbar" [hidden]="config.scrollbar === false"></div>
-          <div class="swiper-pagination" [hidden]="config.pagination === false"></div>
-
-          <div class="swiper-button-prev" [hidden]="config.navigation === false"></div>
-          <div class="swiper-button-next" [hidden]="config.navigation === false"></div>
         </div>
       </div>
+    </div>
+
+      <div class="col-lg main-content">
+       <span class="mat-h4 p-category">Kitchen Designs</span>
+          <ngb-carousel *ngIf="images">
+              <ng-template ngbSlide>
+                <img [src]="images[0]" alt="Random first slide">
+                <div class="carousel-caption">
+                  <h3>10 seconds between slides...</h3>
+                  <p>This carousel uses customized default values.</p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img [src]="images[1]" alt="Random second slide">
+                <div class="carousel-caption">
+                  <h3>No mouse events...</h3>
+                  <p>This carousel doesn't pause or resume on mouse events</p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img [src]="images[2]"  alt="Random third slide">
+                <div class="carousel-caption">
+                  <h3>No keyboard...</h3>
+                  <p>This carousel uses customized default values.</p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img [src]="images[3]" alt="Random fourth slide">
+                <div class="carousel-caption">
+                  <h3>And no wrap after last slide.</h3>
+                  <p>This carousel uses customized default values.</p>
+                </div>
+              </ng-template>
+            </ngb-carousel>
+     
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 import {
   SwiperComponent, SwiperDirective, SwiperConfigInterface, SwiperScrollbarInterface,
   SwiperPaginationInterface
@@ -14,6 +15,7 @@ import { IImage } from 'ng-simple-slideshow';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent {
   public show: boolean = true;
   element: HTMLImageElement;
@@ -75,7 +77,7 @@ export class HomeComponent {
   @ViewChild(SwiperComponent) componentRef: SwiperComponent;
   @ViewChild(SwiperDirective) directiveRef: SwiperDirective;
 
-  constructor() { }
+  // constructor() { }
 
   public toggleType() {
     this.type = (this.type === 'component') ? 'directive' : 'component';
@@ -132,5 +134,21 @@ export class HomeComponent {
 
   public onIndexChange(index: number) {
     // console.log('Swiper index: ', index);
+  }
+
+  // secont carousel---------------
+ // images = [1, 2, 3, 4];//.map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
+
+// tslint:disable-next-line: member-ordering
+ images = ['assets/img/Kitchen/image-1.webp' , 
+     'assets/img/Kitchen/image-2.webp',
+     'assets/img/Kitchen/image-3.webp',
+     'assets/img/Kitchen/image-4.webp' ];
+  constructor(config: NgbCarouselConfig) {
+    // customize default values of carousels used by this component tree
+    config.interval = 10000;
+    config.wrap = false;
+    config.keyboard = false;
+    config.pauseOnHover = false;
   }
 }

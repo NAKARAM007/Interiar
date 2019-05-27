@@ -17,7 +17,7 @@ import { IImage } from 'ng-simple-slideshow';
 })
 
 export class HomeComponent {
-  public show: boolean = true;
+  public show = true;
   element: HTMLImageElement;
   public slides = [
     {
@@ -48,9 +48,9 @@ export class HomeComponent {
       imgsrc: 'assets/img/download9.jpg',
     }
   ];
-  public type: string = 'component';
+  public type = 'component';
 
-  public disabled: boolean = false;
+  public disabled = false;
 
   public config: SwiperConfigInterface = {
     direction: 'horizontal',
@@ -136,11 +136,9 @@ export class HomeComponent {
     // console.log('Swiper index: ', index);
   }
 
-  // secont carousel---------------
- // images = [1, 2, 3, 4];//.map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
-
+  // secont carousel-  chairs design--------------
 // tslint:disable-next-line: member-ordering
- images = ['assets/img/Kitchen/image-1.webp' , 
+ images = ['assets/img/Kitchen/image-1.webp' ,
      'assets/img/Kitchen/image-2.webp',
      'assets/img/Kitchen/image-3.webp',
      'assets/img/Kitchen/image-4.webp' ];
@@ -151,4 +149,10 @@ export class HomeComponent {
     config.keyboard = false;
     config.pauseOnHover = false;
   }
+  /* Wardrobe Designs*/
+// tslint:disable-next-line: member-ordering
+  Wardrobe_images = ['assets/img/Wardrobe/Wardrobe-1.webp' ,
+     'assets/img/Wardrobe/Wardrobe-2.webp',
+     'assets/img/Wardrobe/Wardrobe-3.webp',
+     'assets/img/Wardrobe/Wardrobe-4.webp' ];
 }
